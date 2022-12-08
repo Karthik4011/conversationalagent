@@ -99,6 +99,6 @@ getCountyDetails = (req,res)=>{
 
   res.status(200).send(jsonResponse);
 }
-app.get('/',res.status(200).send("sfds"))
+app.get('/',(req,res)=>{res.status(200).send("sfds")})
 
 app.get('/api/getCountyDetails',getCountyDetails)
