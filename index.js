@@ -7,10 +7,7 @@ const app = express();
 //port
 const port = 8000;
 
-//Starting server
-app.listen(port, () => {
-    console.log(`app is running ${port}`);
-});
+
 
 getCountyDetails = (req,res)=>{
   console.log(req);
@@ -99,6 +96,16 @@ getCountyDetails = (req,res)=>{
 
   res.status(200).send(jsonResponse);
 }
+
+app.get('',(req,res)=>{res.status(200).send("sfds")})
+
+
 app.get('/',(req,res)=>{res.status(200).send("sfds")})
 
-app.get('/api/getCountyDetails',getCountyDetails)
+app.post('/api/getCountyDetails',getCountyDetails)
+
+
+//Starting server
+app.listen(port, () => {
+  console.log(`app is running ${port}`);
+});
